@@ -1,6 +1,7 @@
 <?php
 
 use app\models\Videoaula;
+use \app\models\Instrumento;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -32,7 +33,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'titulo',
             'duracao',
-            'instrumento_fk',
+             [
+                'attribute'=>'instrumento.nome',
+                'label' => 'Instrumento',
+             ],
+
             'professor_fk',
             [
                 'class' => ActionColumn::className(),

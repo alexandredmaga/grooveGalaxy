@@ -34,7 +34,7 @@ class Videoaula extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['titulo'], 'required'],
+            [['titulo', 'professor_fk'], 'required'],
             [['instrumento_fk', 'professor_fk'], 'integer'],
             [['titulo', 'duracao'], 'string', 'max' => 255],
             [['instrumento_fk'], 'exist', 'skipOnError' => true, 'targetClass' => Instrumento::class, 'targetAttribute' => ['instrumento_fk' => 'id']],
@@ -51,8 +51,8 @@ class Videoaula extends \yii\db\ActiveRecord
             'id' => 'ID',
             'titulo' => 'Titulo',
             'duracao' => 'Duracao',
-            'instrumento_fk' => 'Instrumento Fk',
-            'professor_fk' => 'Professor Fk',
+            'instrumento_fk' => 'Instrumento',
+            'professor_fk' => 'Professor',
         ];
     }
 

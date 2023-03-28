@@ -5,6 +5,7 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
+use \app\models\Instrumento;
 
 /** @var yii\web\View $this */
 /** @var app\models\CursoSearch $searchModel */
@@ -31,7 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'nome',
-            'instrumento_fk',
+            [
+                'attribute' => 'instrumento.nome',
+                'label' => 'Instrumento',
+            ],
             'professor_fk',
             'tipo',
             [

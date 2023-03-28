@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use \app\models\Instrumento;
+use \app\models\Videoaula;
 
 /** @var yii\web\View $this */
 /** @var app\models\Videoaula $model */
@@ -16,8 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Atualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Deletar', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -32,8 +34,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'titulo',
             'duracao',
-            'instrumento_fk',
-            'professor_fk',
+            [
+                'attribute'=>'instrumento.nome',
+                'label' => 'Instrumento',
+            ],
+            [
+               'attribute' => 'professor.nome',
+               'label' => 'Professor' 
+            ],
         ],
     ]) ?>
 
