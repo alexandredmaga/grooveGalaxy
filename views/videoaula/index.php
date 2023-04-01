@@ -37,8 +37,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'instrumento.nome',
                 'label' => 'Instrumento',
              ],
+             [
+                'attribute'=>'professor.nome',
+                'label' => 'Professor',
+             ],
 
-            'professor_fk',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Videoaula $model, $key, $index, $column) {

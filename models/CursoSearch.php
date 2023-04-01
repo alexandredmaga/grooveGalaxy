@@ -48,6 +48,21 @@ class CursoSearch extends Curso
             'query' => $query,
         ]);
 
+        $query->joinWith(['professor']);
+
+        $dataProvider->sort->attributes['professor.nome'] = [
+            'asc' => ['professor.nome' => SORT_ASC],
+            'desc' => ['professor.nome' => SORT_DESC],
+        ];
+
+        $query->joinWith(['instrumento']);
+
+        $dataProvider->sort->attributes['instrumento.nome'] = [
+            'asc' => ['instrumento.nome' => SORT_ASC],
+            'desc' => ['instrumento.nome' => SORT_DESC],
+        ];
+
+
         $this->load($params);
 
         if (!$this->validate()) {

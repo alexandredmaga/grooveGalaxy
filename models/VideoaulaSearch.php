@@ -48,6 +48,15 @@ class VideoaulaSearch extends Videoaula
             'query' => $query,
         ]);
 
+        $query->joinWith(['instrumento']);
+
+        $dataProvider->sort->attributes['instrumento.nome'] = [
+            'asc' => ['instrumento.nome' => SORT_ASC],
+            'desc' => ['instrumento.nome' => SORT_DESC],
+        ];
+
+
+
         $this->load($params);
 
         if (!$this->validate()) {

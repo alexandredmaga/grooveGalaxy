@@ -71,7 +71,7 @@ class Videoaula extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getInstrumentoFk()
+    public function getInstrumento()
     {
         return $this->hasOne(Instrumento::class, ['id' => 'instrumento_fk']);
     }
@@ -91,7 +91,7 @@ class Videoaula extends \yii\db\ActiveRecord
      *
      * @return \yii\db\ActiveQuery
      */
-    public function getProfessorFk()
+    public function getProfessor()
     {
         return $this->hasOne(Usuario::class, ['id' => 'professor_fk']);
     }

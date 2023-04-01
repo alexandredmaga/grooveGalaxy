@@ -36,7 +36,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'instrumento.nome',
                 'label' => 'Instrumento',
             ],
-            'professor_fk',
+            [
+                'attribute' => 'professor.nome',
+                'label' => 'Professor',
+            ],
             'tipo',
             [
                 'class' => ActionColumn::className(),
