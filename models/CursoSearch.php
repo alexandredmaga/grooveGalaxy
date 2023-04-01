@@ -14,11 +14,18 @@ class CursoSearch extends Curso
     /**
      * {@inheritdoc}
      */
+
+    public function attributes()
+    {      
+       return array_merge(parent::attributes(), ['instrumento.nome']);
+    }
+
+
     public function rules()
     {
         return [
             [['id', 'instrumento_fk', 'professor_fk'], 'integer'],
-            [['nome', 'tipo'], 'safe'],
+            [['instrumento.nome', 'nome', 'tipo', 'professor'], 'safe'],
         ];
     }
 
@@ -78,8 +85,10 @@ class CursoSearch extends Curso
             'professor_fk' => $this->professor_fk,
         ]);
 
+
         $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'tipo', $this->tipo]);
+            ->andFilterWhere(['like', 'tipo', $this->tipo])
+            ->andFilterWhere(['LIKE', 'instrumento.nome',$this->getAttribute('instrumento.nome')]);
 
         return $dataProvider;
     }
