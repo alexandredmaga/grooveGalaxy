@@ -18,7 +18,7 @@ class VideoaulaSearch extends Videoaula
     {
         return [
             [['id', 'instrumento_fk', 'professor_fk'], 'integer'],
-            [['titulo', 'duracao'], 'safe'],
+            [['titulo', 'duracao',], 'safe'],
         ];
     }
 
@@ -48,6 +48,13 @@ class VideoaulaSearch extends Videoaula
             'query' => $query,
         ]);
 
+        $query->joinWith(['professor']);
+
+        $dataProvider->sort->attributes['professor.nome'] = [
+            'asc' => ['professor.nome' => SORT_ASC],
+            'desc' => ['professor.nome' => SORT_DESC],
+        ];
+
         $query->joinWith(['instrumento']);
 
         $dataProvider->sort->attributes['instrumento.nome'] = [
@@ -73,7 +80,9 @@ class VideoaulaSearch extends Videoaula
         ]);
 
         $query->andFilterWhere(['like', 'titulo', $this->titulo])
-            ->andFilterWhere(['like', 'duracao', $this->duracao]);
+            ->andFilterWhere(['like', 'duracao', $this->duracao])
+            ->andFilterWhere(['like', 'instrumento', $this->instrumento])
+            ->andFilterWhere(['like', 'professor', $this->professor]);
 
         return $dataProvider;
     }

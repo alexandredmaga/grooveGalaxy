@@ -85,7 +85,7 @@ class Curso extends \yii\db\ActiveRecord
      */
     public function getPossuis()
     {
-        return $this->hasMany(Possui::class, ['id_curso' => 'id']);
+        return $this->hasMany(Possui::class, ['id_curso' => 'id'])->joinWith('videoaula');
     }
 
     /**

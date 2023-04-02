@@ -25,7 +25,7 @@ class CursoSearch extends Curso
     {
         return [
             [['id', 'instrumento_fk', 'professor_fk'], 'integer'],
-            [['instrumento.nome', 'nome', 'tipo', 'professor'], 'safe'],
+            [['nome','instrumento.nome', 'tipo',], 'safe'],
         ];
     }
 
@@ -86,8 +86,8 @@ class CursoSearch extends Curso
         ]);
 
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'tipo', $this->tipo])
+        $query->andFilterWhere(['LIKE', 'nome',$this->getAttribute('nome')])
+            ->andFilterWhere(['LIKE', 'tipo',$this->getAttribute('tipo')])
             ->andFilterWhere(['LIKE', 'instrumento.nome',$this->getAttribute('instrumento.nome')]);
 
         return $dataProvider;

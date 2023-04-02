@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /** @var yii\web\View $this */
 /** @var app\models\Curso $model */
@@ -42,5 +43,26 @@ $this->params['breadcrumbs'][] = $this->title;
             'tipo',
         ],
     ]) ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'summary' => '',
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'titulo',
+            'duracao',
+            [
+                'attribute' => 'instrumento.nome',
+                'label' => 'Instrumento',
+            ],
+            [
+                'attribute' => 'professor.nome',
+                'label' => 'Professor',
+            ],
+
+        ],
+    ]); ?>
+
+
 
 </div>

@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Usuario;
 use app\models\UsuarioSearch;
 use yii\web\Controller;
+use yii\data\ActiveDataProvider;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -55,8 +56,19 @@ class UsuarioController extends Controller
      */
     public function actionView($id)
     {
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $this->findModel($id)->getMatriculas(),
+        ]);
+
+        $dataProvider->sort->attributes['curso.nome'] = [
+            'asc' => ['curso.nome' => SORT_ASC],
+            'desc' => ['curso.nome' => SORT_DESC],
+        ];
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'dataProvider' => $dataProvider,
         ]);
     }
 

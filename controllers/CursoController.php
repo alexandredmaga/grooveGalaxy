@@ -6,6 +6,7 @@ use app\models\Curso;
 use app\models\CursoSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 
 /**
@@ -55,8 +56,19 @@ class CursoController extends Controller
      */
     public function actionView($id)
     {
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $this->findModel($id)->getVideoaulas(),
+        ]);
+
+        /*$dataProvider->sort->attributes['videoaulas.titulo'] = [
+            'asc' => ['videoaulas.titulo' => SORT_ASC],
+            'desc' => ['videoaulas.titulo' => SORT_DESC],
+        ];*/
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'dataProvider' => $dataProvider,
         ]);
     }
 

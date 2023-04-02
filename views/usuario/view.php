@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
+use yii\grid\GridView;
 
 /** @var yii\web\View $this */
 /** @var app\models\Usuario $model */
@@ -36,5 +37,19 @@ $this->params['breadcrumbs'][] = $this->title;
             'telefone',
         ],
     ]) ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'summary' => '',
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'curso.nome',
+                'label' => 'Curso',
+            ],
+            'data',
+
+        ],
+    ]); ?>
 
 </div>
