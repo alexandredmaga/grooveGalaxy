@@ -1,18 +1,14 @@
 <?php
 
-/** @var yii\web\View $this */
-
-use yii\helpers\Html;
-
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
+<main>
+	<section class="banner">
+		<div class="content">
+        	<h3>Uma escola de música...</h3>
+        		<p>Fundada em 2023</p>
+        		</p>com o objetivo de revolucionar o aprendizado </p></p>musical através da internet.</p>
+         </div>
+      </section>
+      <section></section>
+</main>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
-
-    <code><?= __FILE__ ?></code>
-</div>

@@ -1,0 +1,105 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+
+}
+
+
+body {
+	background: black;
+	min-height: 200vh;
+	background-attachment: fixed, scroll;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.6s;
+	padding: 40px 100px;
+	z-index: 9999;
+}
+
+header .logo {
+	position: relative;
+	font-weight: 700;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1em;
+	letter-spacing: 2px;
+	transition: 0.6s;
+}
+
+header.sticky {
+	padding: 15px 100px;
+	background: #fff;
+
+}
+
+header ul {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul li {
+	position: relative;
+	list-style: none;	
+}
+
+header ul li a {
+	position: relative;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 2px;
+	font-weight: 500;
+}
+
+.banner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	height: 100vh;
+}
+
+.content{
+	color: white;
+	font-size: 2em;
+}
+
+.content h2 {
+	margin-bottom: 0.5rem;
+}
+
+.content p {
+	margin-bottom: 2rem;
+}
+
+.start a {
+	text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: black;
+    border-radius: 1em;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+}
+
+header.sticky .logo,
+header.sticky ul li a {
+	color: #000;
+}
