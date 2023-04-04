@@ -41,10 +41,13 @@ HomeAsset::register($this);
                     <li>
                          <?= Html::a('Cursos', ['/curso'] ) ?>
                     </li>
-                    <li>
-                        <?= Html::a('Contato', ['/site/contact'] ) ?>
+                     <li>
+                        <?= Html::a('Entrar', ['/site/login'] ) ?>
                     </li>
-                    <li><a id="login" href="#">Login</a></li>
+                    <li>
+                        <?= Html::a('Criar conta', ['/site/login'] ) ?>
+                    </li>
+                    
                 </ul>
             </nav>
         </header>
