@@ -3,7 +3,7 @@
 
 namespace app\controllers;
 
-use app\models\InstrumentoSearch;
+use app\models\CursoSearch;
 
 class CursosController extends \yii\web\Controller
 {
@@ -12,13 +12,14 @@ class CursosController extends \yii\web\Controller
        
        $this->layout = 'home';
 
-   	   $searchModel = new InstrumentoSearch();
+   	   $searchModel = new CursoSearch();
        $dataProvider = $searchModel->search($this->request->queryParams);
 
        return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+
    }
 
 
