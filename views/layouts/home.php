@@ -18,6 +18,7 @@ HomeAsset::register($this);
         <?= Html::csrfMetaTags() ?>
         
         <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./cursos.css" />
 
         <title> <?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
@@ -39,7 +40,7 @@ HomeAsset::register($this);
                         <?= Html::a('Sobre', ['/site/about'] ) ?>
                     </li>
                     <li>
-                         <?= Html::a('Cursos', ['/curso'] ) ?>
+                         <?= Html::a('Cursos', ['/cursos'] ) ?>
                     </li>
                      <li>
                         <?= Html::a('Entrar', ['/site/login'] ) ?>

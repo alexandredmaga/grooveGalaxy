@@ -1,0 +1,30 @@
+
+
+h2 {
+	color: #fff;
+}
+
+.cursos {
+	margin-top: 7rem;
+	text-align: center;
+}
+
+.cursos a {
+	text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #fff;
+    color: black;
+    border-radius: 1em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.cursos-card {
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 1em;
+	margin: 0.5em;
+	cursor: pointer;
+	margin-bottom: 0.9em;
+}
